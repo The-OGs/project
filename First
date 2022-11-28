@@ -1,0 +1,31 @@
+mport mysql.connector
+
+mydb = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = "Sonu2005",
+    database = "proj"
+)
+
+mycursor = mydb.cursor()
+
+print("1 - ADD ITEMS")
+print("2 - DELETE ITEMS")
+print("3 - UPDATE ITEMS")
+print("4 - CHECK TABLE")
+print("5 - CREATE A DISCOUNT")
+
+a = int(input("WHAT YOU WANT TO DO? "))
+
+if a == 1:
+    n = int(input("Enter the number of items: "))
+    for i in range (n):
+        print("Enter the items:")
+        slno = int(input("Enter the serial number of the item: "))
+        item = input("Enter the name of the item: ")
+        cost = float(input("Enter the price of the item: "))
+        sl = int(input("Enter the time it was on the self: "))
+    
+    sql = "insert into shop(Sl_no,Item,Cost,Self_Life_in_week,Stock) values(%s, %s, %s, %s, %s,)"
+    val = ("John", "Highway 21")
+    mycursor.execute(sql, val)
